@@ -69,18 +69,18 @@ function draw3() {
 			}
 	}
 }
-
 $(document).ready(main());
 function main() {
+console.log(versionNumber());
 	questionsAsked[5].push([[],[]]);
 	console.log(questionsAsked);
-	//difficulty = questionsAsked[1].length;
-	if (difficulty >= maxDifficulty && currentSet < mouseOrder.length-1) {
+	difficulty = questionsAsked[1].length;
+	/* if (difficulty >= maxDifficulty && currentSet < mouseOrder.length-1) {
 		currentSet++;
 		difficulty = 0;
-	} 
+	} */
 	function testItem () {
-		if (difficulty >= maxDifficulty && currentSet >= mouseOrder.length-1) {
+		if (difficulty >= maxDifficulty /*&& currentSet >= mouseOrder.length-1*/) {
 			d3.select("body")
 				  //.append("p")
 				  //.attr("id", "version")
@@ -99,7 +99,7 @@ function main() {
 				  "</br>correct: ["+questionsAsked[3]+"],"+
 				  "</br>answerClicked: ["+questionsAsked[4]+"],"+
 				  "</br>endTime: "+questionsAsked[5]+"}");*/
-			dataToSubmit = {"version" : "v0.8.6 ", "startTime" : questionsAsked[0],
+			dataToSubmit = {"version" : versionNumber, "startTime" : questionsAsked[0],
 			"onLoad" : [questionsAsked[1]],
 			"onClick" : [questionsAsked[2]],
 			"mouseOver" : [questionsAsked[5]],
@@ -110,7 +110,8 @@ function main() {
 
 
 			console.log(dataToSubmit);
-			finishScript(dataToSubmit);
+			
+			download(dataToSubmit, 'data.txt', 'text/plain');
 		} else {
 			var correctAnswers = 0;
 			for (var i = 0; i < questionsAsked[3].length; i++) {
@@ -164,12 +165,19 @@ function main() {
 		difficulty++;
 	
 			// For DEBUGGING & TESTING
-			/*d3.select("#thirdpartyDiv")
+			/*d3.select("body")
 				  .append("p")
 				  .attr("id", "skipText")
 				  .html("<font size=\"2\">Question: "+difficulty);*/
 	}
-	if (difficulty == 0) {
+	
+	testItem();
+	
+	// The following is for running each participant through multiple different shorter tests
+	//  Also see lines 80 and 77 (as of internal version 0.8.7), see comments below
+	//	[difficulty = 0]
+	// 	[difficulty = questionsAsked[1].length;]
+	/*if (difficulty == 0) {
 		var MOText = "";
 		switch (mouseOrder[currentSet]) {
 			case 0:
@@ -194,5 +202,5 @@ function main() {
 			testItem();}, 3000)
 	} else {
 		testItem();
-	}
+	}*/
 }

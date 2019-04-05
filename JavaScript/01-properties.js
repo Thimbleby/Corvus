@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------------- 
 //	ver   	date        rfc     auth    comments                                         
 // --------------------------------------------------------------------------------- 
-//	0.8.6   20170927    IT      IT       Mouseover Off
+//	0.8.8   20190405    IT      IT      Returned tests to standard Raven's-like structure
 /* ************ © Copyright 2019 Isaac Thimbleby ******** */
 //
 //
@@ -101,8 +101,13 @@ function resize() {
 }
 
 // Mouse-over
-var mouseOrder = [0,2,1];
-var currentSet = 0;
+// Set mouse-over to determine mouseOver functionality
+// currentSet chooses from the array mouseOrder
+// 0 = The tooltip is active and the options are otherwise visible
+// 1 = The tooltip is deactive and the options are visible
+// 2 = The tooltip is active and the options are otherwise hidden
+var mouseOrder = [0,1,2];
+var currentSet = 2;
 // Spacing
 var spacing = cx*1.00;
 var interSpacing = 0.15;
@@ -189,3 +194,7 @@ function returnStringArray (Arr) {
 	temp+="]"
 	return temp;
 }
+function versionNumber() {
+	return "v0.8.8";
+}
+console.log("Corvus version: " + versionNumber());

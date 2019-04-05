@@ -23,7 +23,16 @@ var TESTTYPE = "random";
 var d = new Date;
 var startTime = d.getTime();
 Math.seedrandom(""+startTime);
+
+function seed() {
+	// Do nothing 
+	// The seedrandom.js library can be used here to further tweak how the random generator is seeded
+}
 </script>
+<!-- The following script download.js is designed for testing on a local server; however it only works on some browsers -->
+<script src="Other files/download.js"></script>
+<!-- Replace the above, along with references to it in main.js, with your own backend solution -->
+
 <script src="JavaScript/01-properties.js"></script>
 <script src="JavaScript/02-orders.js"></script>
 <script src="JavaScript/03-logicGates.js"></script>
