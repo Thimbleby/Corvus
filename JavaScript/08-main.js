@@ -110,7 +110,7 @@ function main() {
 
 			console.log(dataToSubmit);
 			
-			download(dataToSubmit, 'data.txt', 'text/plain');
+			download(JSON.stringify(dataToSubmit), 'data.txt', 'text/plain');
 		} else {
 			var correctAnswers = 0;
 			for (var i = 0; i < questionsAsked[3].length; i++) {
