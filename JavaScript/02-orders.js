@@ -801,6 +801,7 @@ function CLGateRNGQu (noEle) {
 function CLGateRNGAns (rule, noEle, noAns, dif, maxDif) {
 	// this is never identity
 	// generate ansTable as all correct
+	// e.g. first incorrect option would be [0,0,0,0,0,0] when noEle = 6
 	var ansTable = [];
 	for (var x = 0; x < noAns; x++) {
 		var tempArray = [];
@@ -812,20 +813,27 @@ function CLGateRNGAns (rule, noEle, noAns, dif, maxDif) {
 	// alter all distractors to be incorrect (no Anomalies)
 	// this is way simpler than with Annuli, due to the fact 
 	// that the matrix needs to have all possible combinations.
+	
+	// Determine how many subelements (e.g. lines) to alter per option 
+	// inversely scales with difficulty
+	// when easier, inversely scales with half noEle
 	var MAD = Math.ceil(noEle/2);
 	var maxAnswerDelta = Math.max(MAD-MAD*dif/maxDif,1);
 	//console.log("maxAnswerDelta: "+maxAnswerDelta);
 	//console.log(returnStringArray(ansTable));
 	for (var x = 0; x < ansTable.length; x++) {
+		// answerDelta must be at least 1
 		var answerDelta = Math.floor(Math.random()*maxAnswerDelta)+1;
-		var RNGAdjust = Math.random()*(noEle/maxAnswerDelta);
+		// randomly choose a subelement in the distractor, in the range noEle/delta
+		// noEle/delta is so that each altered subelement is selected from a different section.
+		var RNGAdjust = Math.random()*(noEle/answerDelta);
 		//console.log("RNGAdjust: "+RNGAdjust);
-	//console.log("answerDelta: "+answerDelta);
+		//console.log("answerDelta: "+answerDelta);
 		for (y = 0; y < answerDelta; y++) {
 			if (Math.floor(noEle*y/answerDelta+RNGAdjust) > noEle) {
-				console.warn("Help! complex thingy: "+Math.floor(noEle*y/answerDelta+RNGAdjust)+" > noEle: "+noEle);
+				console.warn("Rounding error: "+(noEle*y/answerDelta+RNGAdjust)+" > noEle: "+noEle);
 			}
-			ansTable[x][Math.floor(noEle*y/answerDelta+RNGAdjust)] = 1;
+			ansTable[x][Math.max(Math.floor(noEle*y/answerDelta+RNGAdjust), noEle-1)] = 1;
 			
 	//console.log(returnStringArray(ansTable));
 		}
@@ -969,10 +977,12 @@ function AddRNGAns (rule, noAns) {
 	// tempOrigin != answer
 	var tempOrigin = (answer+Math.floor(Math.random()*1.5+1)*(Math.floor(Math.random()*2)*2-1))*(-Math.floor(Math.random()*1.5)*2+1);
 	var loopCounter = 0;
+	var viboundary = 20;
+	var varianceIncrement = 0;
 	while (ansTable.length < noAns) {
 		var unique = true;
 		// tempNewAns clouds around tempOrigin
-		var tempNewAns = (tempOrigin+Math.floor(Math.random()*2.5)*(Math.floor(Math.random()*2)*2-1))*(-Math.floor(Math.random()*1.5)*2+1);
+		var tempNewAns = (tempOrigin+Math.floor(Math.random()*2.5)*(Math.floor(Math.random()*2)*2-1))*(-Math.floor(Math.random()*1.5)*2+1)+varianceIncrement*((Math.floor(Math.random()*2)-0.5)*2);
 		// Modifies by 2-3, as this way the cloud behaves relatively sensibly at extremes.
 		// 1-2, 1-3 and 3-4 produce worse clouds. Other ranges not checked.
 		var subloop1 = 0;
@@ -980,7 +990,7 @@ function AddRNGAns (rule, noAns) {
 		while ((tempNewAns+absoluteAnswerVal) > 9) {
 			subloop1++;
 			tempNewAns -= Math.floor(Math.random()*2)+2;
-			if (subloop1 > 50) {
+			if (subloop1 > 20) {
 				console.warn("subloop1 broken");
 				break;	
 			}
@@ -988,12 +998,13 @@ function AddRNGAns (rule, noAns) {
 		while ((tempNewAns+absoluteAnswerVal) < -9) {
 			subloop2++;
 			tempNewAns += Math.floor(Math.random()*2)+2;
-			if (subloop2 > 50) {
+			if (subloop2 > 20) {
 				console.warn("subloop2 broken");
 				break;	
 			}
 		}
 		//console.log(tempNewAns);
+		loopCounter ++;
 		if (answer == tempNewAns) {
 				unique = false;
 		} else {
@@ -1003,13 +1014,18 @@ function AddRNGAns (rule, noAns) {
 					break;
 				}
 			}
+			// loopCounter break location at least ensures that duplicate option != answer
+			if (!unique && loopCounter > 100) {
+				console.warn("ADD ansTable Loop exceeded bounds");
+				break;
+			}
 		}
 		if (unique) {
 			ansTable.push(tempNewAns);
 		}
-		if (loopCounter > 100) {
-			console.warn("ADD ansTable Loop exceeded bounds");
-			break;
+		if (loopCounter > viboundary) {
+			viboundary += 20;
+			varianceIncrement++;
 		}
 	}
 	
@@ -1181,6 +1197,7 @@ for (var x = 0; x < allPuzzleTypes.length; x++) {
 		var noAnsX = JSON.parse(JSON.stringify(allPuzzleTypes[x][4].length));
 		allPuzzleTypes[x][7] = AddRNGAns(allPuzzleTypes[x][6],noAnsX);
 		console.log("itemNo: "+x+" Logic Option: "+logicOptionStringTranslate[allPuzzleTypes[x][2]]+": Difficulty: "+dif+ " | Rule: " + returnStringArray(allPuzzleTypes[x][6])+ " | Answer: "+(allPuzzleTypes[x][6][0]+allPuzzleTypes[x][6][1]+allPuzzleTypes[x][6][2]+allPuzzleTypes[x][6][3])+ " | Distractor set: " + returnStringArray(allPuzzleTypes[x][7]));
+	
 	}
 	// AND
 	if (allPuzzleTypes[x][2] == 4) {

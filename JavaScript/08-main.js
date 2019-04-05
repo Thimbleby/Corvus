@@ -71,7 +71,6 @@ function draw3() {
 }
 $(document).ready(main());
 function main() {
-console.log(versionNumber());
 	questionsAsked[5].push([[],[]]);
 	console.log(questionsAsked);
 	difficulty = questionsAsked[1].length;
@@ -99,7 +98,7 @@ console.log(versionNumber());
 				  "</br>correct: ["+questionsAsked[3]+"],"+
 				  "</br>answerClicked: ["+questionsAsked[4]+"],"+
 				  "</br>endTime: "+questionsAsked[5]+"}");*/
-			dataToSubmit = {"version" : versionNumber, "startTime" : questionsAsked[0],
+			dataToSubmit = {"version" : versionNumber(), "startTime" : questionsAsked[0],
 			"onLoad" : [questionsAsked[1]],
 			"onClick" : [questionsAsked[2]],
 			"mouseOver" : [questionsAsked[5]],
