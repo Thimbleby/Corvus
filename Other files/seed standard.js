@@ -1,0 +1,3 @@
+function seed() {
+	// Do nothing!
+}
