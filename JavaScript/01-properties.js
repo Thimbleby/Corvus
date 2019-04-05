@@ -107,7 +107,7 @@ function resize() {
 // 1 = The tooltip is deactive and the options are visible
 // 2 = The tooltip is active and the options are otherwise hidden
 var mouseOrder = [0,1,2];
-var currentSet = 2;
+var currentSet = 0;
 // Spacing
 var spacing = cx*1.00;
 var interSpacing = 0.15;
