@@ -25,6 +25,8 @@
 // 5 - OR						Commutative
 // 6 - XOR						Commutative
 // 7 - XNOR						Commutative
+//
+// Not implemented:
 // 8 - NOR						Symmetric
 // 9 - NAND						Symmetric
 // 10 - ANDNOT					Non-trivial
@@ -46,9 +48,6 @@
 //
 // *****
 // Layout
-// One large uncertainty in the order of possibleLayouts is whether [threeOrFour()] is more 
-// complex than [1,2] or not. Screen complexity vs puzzle complexity.
-// For further uncertainties, see the 'Odd Ball' categories.
 // 			
 // Uses the format [Scale,[Colour, Form, Rotation],[Colour, Form, Rotation]]
 // The outer annuli uses the first array [Colour, Form, Rotation], and the inner annulus uses the second array
@@ -60,7 +59,7 @@
 //
 // *****
 // Number grid
-// THIS TEXT IS INSUFFICIENT OR WRONG
+// THIS COMMENT IS INCOMPLETE
 // ALL number patterns must have more than 1 example. 3-4 examples should be better.
 // Columns and rows must sum |x| < 9 & total sum must be |x| < 9
 // Combined with shade alterations, negatives can be quite hard.
@@ -71,7 +70,7 @@
 // 1 = Up to 1 missing Icon
 // 2 = Up to 2 missing Icons 
 // 3 = Up to 3 missing Icons
-// 4 = Up to 4 missing Icons
+// 4 = Up to 4 missing Icons — N.B. actually having 4 missing icons is rarely possible, due to logic which ensures the items are solvable.
 // NOT INCLUDING '?'
 //
 // *****
@@ -81,15 +80,10 @@
 // 
 // N.b. Grid size is currently fixed as square.
 //
-// random generators
-//maxDif = 10;
-//anomUpperBound = 0.6*maxDif; // (inverted)
-//anulusUpperBound = 0.2*maxDif; // (inverted)
-//difficulty = 3300;
 
-							//1
+						  //1
 var allPuzzleTypes = [[[3,3],													// 0. [Grid Size]
-					     [0],													// 1. [Graphic Options] // can only be 2 - at most???
+					     [0],													// 1. [Graphic Options] // can generally only be 2 at most
 					     [0],		 											// 2. [Logic Options]
 					     [0,[0,0,0]],											// 3. [Layout]
 					     [[0,[1,1,0]],[2,[2,0,0]],[1,[0,2,0]]],					// 4. [Answer Layout]

@@ -118,9 +118,9 @@ function choosePattern() {
 					}
 				}
 				// select the right logic gate.
-				if ((self.patternType[2][t]-3) < logicGateArray.length) {
-					logicGate = logicGateArray[self.patternType[2][t]-3];
-					console.log("patternType: "+(self.patternType[2][t]-3)+" LGA: "+logicGateArray);
+				if ((self.patternType[2][t]-4) < logicGateArray.length) {
+					logicGate = logicGateArray[self.patternType[2][t]-4];
+					console.log("patternType: "+(self.patternType[2][t]-4)+" LGA: "+logicGateArray);
 				} else {
 					console.warn("Logic not in logicGateArray");
 				}
