@@ -1502,12 +1502,15 @@ function choosePattern() {
 			return self.rotOffset/(1+n);
 	}
 	
-	self.usingANYrot = false;
+	self.usingANYrot = [];
+	for (var z = 0; z < self.noAnnuli; z++) {
+		self.usingANYrot[z] = false;
+	}
 	for (var x = 0; x < self.answers.length; x++) {
 		for (var z = 0; z < self.noAnnuli; z++) {
 			if (self.answers[x].a[z].rotation > 0) {
-				self.usingANYrot = true;
-			}
+				self.usingANYrot[z] = true;
+			} 
 		}
 	}
 }

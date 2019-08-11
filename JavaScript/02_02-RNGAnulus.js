@@ -1,8 +1,8 @@
 function AnulusRNGQu(dif, maxDif) {
 	var tempVal12 = Math.floor(Math.random()*2)+1;
-	var bool12 = false;
+	var bool12 = true;
 	var tempVal34 = Math.floor(Math.random()*2)+3;
-	var bool34 = false;
+	var bool34 = true;
 	
 	var temp = annulusRuleArray[Math.floor(dif/maxDif)];
 	
@@ -10,10 +10,10 @@ function AnulusRNGQu(dif, maxDif) {
 	
 	if (temp[0] == 1) {
 		result[0] = tempVal12;
-		bool12 = true;
+		bool12 = false;
 	} else if (temp[0] == 2) {
 		result[0] = tempVal34;
-		bool34 = true;
+		bool34 = false;
 	} else { 
 		result[0] = 0;
 	}

@@ -54,7 +54,7 @@ function shape(centx,centy,x,y,removable,name) {
 		var r = pat.radii[n]*pat.grid[x][y].scale;
 		var a = (pat.grid[x][y].a[n].rotation+pat.rotOffset)*2*Math.PI;
 		var LW = (lineThickness)*(pat.radii[pat.grid[x][y].a[n].lineWidth]+30)/10*scale;
-		if (pat.usingANYrot) {
+		if (pat.usingANYrot[n]) {
 			if(pat.includeAnnuli) {
 				if (removable) {
 					var circle = svg.append("circle")
@@ -179,7 +179,7 @@ function shape(centx,centy,x,y,removable,name) {
 				}
 				data.pop();	
 				if (removable) {
-					if (pat.usingANYrot) {
+					if (pat.usingANYrot[n]) {
 						if (pat.grid[x][y].a[n].polyForm == "pentagon") {
 							var circle = svg.append("circle")
 											.attr("cx", (data[1].x+data[5].x)/2)
@@ -206,7 +206,7 @@ function shape(centx,centy,x,y,removable,name) {
 										.style("stroke-dasharray", pat.grid[x][y].a[n].dasharray)
 										.attr("id", name);
 				} else {
-					if (pat.usingANYrot) {
+					if (pat.usingANYrot[n]) {
 						if (pat.grid[x][y].a[n].polyForm == "pentagon") {
 							var circle = svg.append("circle")
 											.attr("cx", (data[1].x+data[5].x)/2)
@@ -283,7 +283,7 @@ function answerShape(centx,centy,x,removable,name) {
 		var a = (pat.answers[x].a[n].rotation+pat.rotOffset)*2*Math.PI;
 		var LW = (lineThickness)*(pat.radii[pat.answers[x].a[n].lineWidth]+30)/10*scale;
 		
-		if (pat.usingANYrot) {
+		if (pat.usingANYrot[n]) {
 			if(pat.includeAnnuli) {
 				if (removable) {
 					var circle = svg.append("circle")
