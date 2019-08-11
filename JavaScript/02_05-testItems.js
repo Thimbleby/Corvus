@@ -58,10 +58,10 @@
 // Mostly used for logic gate Rules.
 //
 // *****
-// Number grid
-// THIS COMMENT IS INCOMPLETE
-// ALL number patterns must have more than 1 example. 3-4 examples should be better.
-// Columns and rows must sum |x| < 9 & total sum must be |x| < 9
+// Number Answer Layout
+// For Logic Gates ALL boolean sets (including their answer) must have at least one complete example. 
+// Make sure the missing element doesn't remove the only answer to one of those sets.
+// For addition columns and rows must sum |x| < 9 & total sum must be |x| < 9
 // Combined with shade alterations, negatives can be quite hard.
 //
 // *****
@@ -218,6 +218,8 @@ var allPuzzleTypes = [[[3,3],													// 0. [Grid Size]
 					      0,
 					      0]];
 var logicOptionStringTranslate = ["Identity", "123", "112", "Add", "AND", "OR", "XOR", "XNOR"]
+
+// ### Override allPuzzleTypes ###
 for (var x = 0; x < allPuzzleTypes.length; x++) {
 	var dif = annulusRuleArray.length*x/allPuzzleTypes.length;
 	// Identity

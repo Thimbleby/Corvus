@@ -86,7 +86,7 @@ function AnulusRNGAns(rule, noAns) {
 	else if (count == 1)
 		var noAnomalies = noAns - 2;
 	else if (count == 2)
-		var noAnomalies = noAns -8;
+		var noAnomalies = noAns - 8;
 	else
 		var noAnomalies = 0;
 	// count = 0: noA = noAns - 0
@@ -118,8 +118,6 @@ function AnulusRNGAns(rule, noAns) {
 		}
 	}
 	// MUST NOT BE ANY [0,[0,0,0]]s — Minimum necessary requirement for functioning
-	// Frequency analysis stuff goes here
-	// i.e. clues & anti-clues
 	// Anomalies dealt with further down
 	
 	// next generate as if no anomalies, but incorporate the rules
@@ -167,7 +165,7 @@ function AnulusRNGAns(rule, noAns) {
 	 	
 	
 	// adds in anomalies, which enables situations where ansTable.length < noAns, including Identity
-	// and could allow for any other situation that calls for anomalies.
+	// and could allow for any other situation that calls for anomalies, such as .
 	if (ansTable.length != 0) {
 		//var RNGAnomAdjust = Math.floor(Math.random()*(noAnomalies%ansTable.length));
 		for (var x = 0; x < noAnomalies; x++) {

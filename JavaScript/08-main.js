@@ -110,6 +110,7 @@ function main() {
 
 			console.log(dataToSubmit);
 			
+			// ### DOWNLOAD FUNCTION ###
 			download(JSON.stringify(dataToSubmit), 'data.txt', 'text/plain');
 		} else {
 			var correctAnswers = 0;

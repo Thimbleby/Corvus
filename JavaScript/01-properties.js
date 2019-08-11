@@ -100,7 +100,7 @@ function resize() {
 	updateRadii();
 }
 
-// Mouse-over
+// ### Mouse-over ###
 // Set mouse-over to determine mouseOver functionality
 // currentSet chooses from the array mouseOrder
 // 0 = The tooltip is active and the options are otherwise visible
