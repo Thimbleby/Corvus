@@ -715,6 +715,7 @@ function choosePattern() {
 		}
 		return invis;
 	}
+	// ### Calculate Minimum Unconcealed ###
 	function requiredVisSet () {
 		// This function returns a list of coordinates that form the remaining required set.
 		// This function assumes the following:
