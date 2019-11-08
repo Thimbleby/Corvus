@@ -1,0 +1,81 @@
+
+allPuzzleTypes format: [[GridSizeX, GridSizeY], [Graphical Options], [Logical options], [Layouts], [Answer Layouts], [# starter/full grid], [Answer #variations], #Concealed, Type]
+Graphical Options.length = Logical Options.length = Number of Pattern types used.
+
+*****
+Graphical Options
+0 - Annulus
+1 - Dice
+2 - Petals
+3 - Spike Rings
+4 - Tessellating Squares
+5 - Tessellating Triangles
+6 - BoxLines
+
+*****
+Logical Options
+0 - Identity
+
+1 - 123
+2 - 112
+
+3 - Addition
+
+4 - AND						Commutative
+5 - OR						Commutative
+6 - XOR						Commutative
+7 - XNOR						Commutative
+
+Not implemented:
+8 - NOR						Symmetric
+9 - NAND						Symmetric
+10 - ANDNOT					Non-trivial
+11 - NANDNOT					Non-trivial
+12 - ORNOT					Non-trivial
+13 - NORNOT					Non-trivial
+14 - IFY						Non-trivial
+15 - IFNY					Non-trivial
+16 - IFX						Non-trivial
+17 - IFNX					Non-trivial
+
+18 - Magic Squares
+19 - Basic Symmetry
+20 - Rotational Symmetry
+21 - Tessellation
+22 - Karnaugh Maps
+
+For logic gates: Commutative >> Symmetric >> Non-trivial
+
+*****
+Layout
+			
+Uses the format [Scale,[Colour, Form, Rotation],[Colour, Form, Rotation]]
+The outer annuli uses the first array [Colour, Form, Rotation], and the inner annulus uses the second array
+Scale is uniform across annuli
+
+*****
+Number of elements in central icon - determines size of Number grid.
+Mostly used for logic gate Rules.
+
+*****
+Number Answer Layout
+For Logic Gates ALL boolean sets (including their answer) must have at least one complete example. 
+Make sure the missing element doesn't remove the only answer to one of those sets.
+For addition columns and rows must sum |x| < 9 & total sum must be |x| < 9
+Combined with shade alterations, negatives can be quite hard.
+
+*****
+#Concealed
+0 = No missing Icons
+1 = Up to 1 missing Icon
+2 = Up to 2 missing Icons 
+3 = Up to 3 missing Icons
+4 = Up to 4 missing Icons — N.B. actually having 4 missing icons is rarely possible, due to logic which ensures the items are solvable.
+NOT INCLUDING '?'
+
+*****
+Type
+0 - Missing Icon
+1 - Wrong Icon
+
+N.b. Grid size is currently fixed as square.

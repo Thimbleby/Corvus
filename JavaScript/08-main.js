@@ -30,7 +30,8 @@ function draw1() {
 					 .attr("stroke", "DarkGray");
 }
 function draw2() {
-	skipButton (w-iconSizeX,0);
+	if (allowSkipItem)
+		skipButton (w-iconSizeX,0);
 	for (var i=0, y=0; y < maxG ; y++) {
 		for (var x=0;x < maxG ;x++) {
 			if (x != pat.v[0] || y != pat.v[1]) {

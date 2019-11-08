@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------------- 
 //	ver   	date        rfc     auth    comments                                         
 // --------------------------------------------------------------------------------- 
-//	0.8.9   20190727    IT      IT      Bug Fixes
+//	0.9.0   20191107    Ex      IT      Corax v0.1.0 added
 /* ************ © Copyright 2019 Isaac Thimbleby ******** */
 //
 //
@@ -107,7 +107,8 @@ function resize() {
 // 1 = The tooltip is deactive and the options are visible
 // 2 = The tooltip is active and the options are otherwise hidden
 var mouseOrder = [0,1,2];
-var currentSet = 0;
+// currentSet is defined in test file.
+// var currentSet = 0;
 // Spacing
 var spacing = cx*1.00;
 var interSpacing = 0.15;
@@ -195,6 +196,6 @@ function returnStringArray (Arr) {
 	return temp;
 }
 function versionNumber() {
-	return "v0.8.8";
+	return "v0.9.0";
 }
 console.log("Corvus version: " + versionNumber());
