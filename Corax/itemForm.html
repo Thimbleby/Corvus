@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+*   index.html
+*   Version 0.1.0
+*   Isaac Thimbleby 
+-->
+<!-- © Copyright Isaac Thimbleby 2019 --> 
+<meta charset="utf-8">
+<title>Intro page</title>
+<style>
+.column {
+	float: left;
+	width: 50%;
+}
+
+.answercolumn {
+	float: left;
+	width: 20%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+</style>
+</head>
+<body>
+
+<h1 id = "title">Corax v0.1.0</h1>
+
+</body>
+</html>
+
+<html>
+<body>
+</br>
+</br>Click <a href="javascript:showItem();">here</a> to view the test item!</br>
+Once viewed, click on 'Download this item' to download it. </br>
+See Corax's user manual for futher instructions once downloaded.</br>
+</br>
+Click <a href='index.html'>here</a> to return to Corax's main page.</br></br>
+</br>
+<p><font size="+2">Use the menus below to specify the test item you wish to generate, view and download.</font>
+</br><!-- 
+
+</br>
+Please note that Corax is not capable of generating the full range of test items Corvus is able to present. </br>
+If you want more control over your test items than Corax can enable, then please consult the advanced manual for help. </br>
+ -->
+</br>
+<hr>
+<font size="+1"><b>Item Size:</b></font> 3x3
+</br></br>
+<hr>
+<div class = "row">
+	<div class = "column">
+		<font size="+1"><b>Graphic Option:</b></font>
+		<select id='graphicOptions'>
+			<option value=0>Annulus</option>
+			<option value=1>Dice</option>
+			<option value=2>Petals</option>
+			<option value=3>Spike Rings</option>
+		</select>
+	</div>
+	<div class = "column">
+		<font size="+1"><b>Logic Option: </b></font>
+		<select id='logicOptions'>
+			<option value=0>Identity</option>
+			<option value=2>Distribution of 2</option>
+			<option value=1>Distribution of 3</option>
+			<option value=3>Addition</option>
+			<option value=4>AND</option>
+			<option value=5>OR</option>
+			<option value=6>XOR</option>
+			<option value=7>XNOR</option>
+		</select>
+	</div>
+</div></br>
+<div id = distAnnuliChooser><hr>
+<font size="+1"><b>Number of Annuli: </b></font>
+<select id= 'nAnnuli'>
+	<option value=1>1</option>
+	<option value=2>2</option>
+</select>
+</br></br>
+</div>
+<div id = 'distLayout'>
+<hr>
+<font size="+1"><b>Layout: </b></font>
+</br>
+In this section the drop down boxes allow you to select the form of the rule for each attribute. </br>
+Identity means that this attribute's rule is 'all elements are the same'; i.e. it means that there is no rule applied to this attribute.</br>
+If the logic option is not identity, then at least one of these attributes must be assigned a non-identity form.</br>
+</br>
+<div id = 'layout'></div></div>
+<div id = 'distAnswerLayouts'>
+<hr>
+<font size="+1"><b>Answer Layouts: </b></font> </br>
+Number of alternative options: 
+<select id= 'nAnswers'>
+	<option value=3>3</option>
+	<option value=4>4</option>
+	<option value=5>5</option>
+</select>
+</br>
+</br>
+In the drop down boxes below, a value of zero determines that property of that option is identical to the correct answer.</br> 
+At least one property of every option listed here must be non-zero. </br>
+The correct answer will be added to these later (the total number of answers will be the number of alternative answers plus one).</br>
+If this requirement is not satisfied the text will be coloured red, and you will be unable to view and download the item.</br>
+</br>
+A value of 1 or 2 determines that that property is different from the correct answer. </br>
+Properties with the values 1 and 2 will also be different to each other </br>
+</br>
+The order these options are presented in will be shuffled for each participant.
+</br>
+</br>
+<div id = 'Ans1'><b>Alternate Option 1:</b></br></div>
+<div id = 'Ans2'><b>Alternate Option 2:</b></br></div>
+<div id = 'Ans3'><b>Alternate Option 3:</b></br></div>
+<div id = 'Ans4'><b>Alternate Option 4:</b></br></div>
+<div id = 'Ans5'><b>Alternate Option 5:</b></br></div>
+<div id = 'Ans6'><b>Alternate Option 6:</b></br></div>
+</div>
+<div id = noEleInCentre>
+<hr>
+<font size="+1"><b>Number of Elements in Centre: </b></font></br></br></div>
+<div id = noLayouts>
+<hr>
+<font size="+1"><b>Number Layout: </b></font></br></br></div>
+<div id = noAnswerLayouts>
+<hr>
+<font size="+1"><b>Number Answer Layouts: </b></font></br></br></div>
+
+<div id = concealedDiv>
+<hr>
+<font size="+1"><b>Concealed: </b></font>
+<select id ='concealed'>
+	<option value=0>0</option>
+	<option value=0>1</option>
+	<option value=0>2</option>
+	<option value=0>3</option>
+</select></br>
+The concealed property will attempt to conceal the specified number of elements, while ensuring that the test item is solvable.
+It will prioritise solvability over concealing the correct number of elements.</br></br>
+</div>
+<hr>
+</br>Click <a href="javascript:showItem();">here</a> to view the test item!</br>
+Once viewed, click on 'Download this item' to download it. </br>
+See Corax's user manual for further instructions once downloaded.</br>
+</br>
+</br>Click <a href='index.html'>here</a> to return to Corax's main page.
+
+
+
+<script src="JavaScript/00-form.js"></script>
+
+</p>
+</body>
+</html>

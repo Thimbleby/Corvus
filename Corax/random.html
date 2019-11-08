@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+*   random.html
+*   Version 0.8.9
+*   Isaac Thimbleby 
+-->
+<!-- © Copyright Isaac Thimbleby 2019 --> 
+<meta charset="utf-8">
+<title>Random Test</title>
+</style>
+</head>
+<body>
+
+<script src="Libraries/d3.v3.min.js"></script>
+<!--<script src="Libraries/d3-transform.js"></script>-->
+<script src="Libraries/jquery-1.10.2.min.js"></script>
+<script src="Libraries/seedrandom.js"></script>
+<script>
+// Start time;
+var TESTTYPE = "random";
+var d = new Date;
+var startTime = d.getTime();
+// ### Seed ###
+Math.seedrandom(""+startTime);
+
+function seed() {
+	// Do nothing 
+	// The seedrandom.js library can be used here to further tweak how the random generator is seeded
+}
+</script>
+<!-- The following script download.js is designed for testing on a local server; however it only works on some browsers e.g. Chrome -->
+<script src="Other files/download.js"></script>
+<!-- Replace the above, along with references to it in main.js, with your own backend solution -->
+
+<script src="JavaScript/01-properties.js"></script>
+<script src="JavaScript/02_01-orders.js"></script>
+<script src="JavaScript/02_02-RNGAnulus.js"></script>
+<script src="JavaScript/02_03-RNGAdd.js"></script>
+<script src="JavaScript/02_04-RNGLG.js"></script>
+<script src="JavaScript/02_05-testItems.js"></script>
+<script src="JavaScript/03-logicGates.js"></script>
+<script src="JavaScript/04-pattern.js"></script>
+<script src="JavaScript/05-icon.js"></script>
+<script src="JavaScript/06_01-dice.js"></script>
+<script src="JavaScript/06_02-petals.js"></script>
+<script src="JavaScript/06_03-spikeRings.js"></script>
+<script src="JavaScript/06_04-boxes.js"></script>
+<script src="JavaScript/06_05-triangles.js"></script>
+<script src="JavaScript/06_06-boxLines.js"></script>
+<!-- Insert additional graphical encoding files here -->
+<script src="JavaScript/07-shape.js"></script>
+<script src="JavaScript/08-main.js"></script>
+</body>
+</html>

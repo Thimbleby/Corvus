@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+*   index.html
+*   Version 0.1.0
+*   Isaac Thimbleby 
+-->
+<!-- © Copyright Isaac Thimbleby 2019 --> 
+<meta charset="utf-8">
+<title>Intro page</title>
+<style>
+#uploadBox {
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+#drop_zone {
+	border: 2px dashed #bbb;
+	-mox-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding: 25px;
+	text-align: center;
+	font: 20pt bold 'Vollkorn';
+	color: #bbb;
+}
+.explanation {
+/* 	font-style: italic; */
+	padding-left:2em;
+}
+
+</style>
+</head>
+<body>
+
+<h1 id = "title">Corax v0.1.0</h1>
+
+</body>
+</html>
+
+<html>
+<body>
+
+Participants ...
+<select id = 'skipy'>
+	<option value = true>can</option>
+	<option value = false>cannot</option>
+</select> ... skip test items.
+</br>
+The mouse over feature is ...
+<select id = 'mouseOver'>
+	<option value = 1>disabled</option>
+	<option value = 0>enabled</option>
+	<option value = 2>essential</option>
+</select> ... for participants.
+</br>
+<div id = 'dis' class = 'explanation'><font size="-1">Selecting 'disabled' means that there will be no mouseover features.
+</font></br></div>
+<div id = 'ena' class = 'explanation'><font size="-1">Selecting 'enabled' means that participants will be shown any option they move their mouse over in the Matrix, as if completing it. 
+</font></br></div>
+<div id = 'ess' class = 'explanation'><font size="-1">Selecting 'essential' means that participants cannot see the details of the options available to them unless their mouse is positioned over that option.
+</font></br></div>
+These test items will be ...
+<select id = 'randomisation'>
+	<option value=1>specified by</option>
+	<!-- <option value=2>very similar to</option> -->
+	<option value=3>inspired by</option>
+</select> ... the test item files.
+</br>
+<div id = 'sp' class = 'explanation'><font size="-1">Selecting 'specified' means your test items can still vary in very minor ways on repeat testing. For example the order the options are presented in is usually random.
+</font></br></div>
+<div id = 'si' class = 'explanation'><font size="-1">Selecting 'very similar' means that the test items vary from the specification in mostly superficial or graphical ways. e.g. A horizontal form can be swapped for a vertical one. 
+</font></br></div>
+<div id = 'in' class = 'explanation'><font size="-1">Selecting 'inspired' means that the test items can vary significantly from the specification, though they will still be used as the starting point in generating the final item.
+</font></br></div>
+</br>
+</br>
+
+<div id = uploadBox>
+<div id="drop_zone">On your computer, arrange all of the test items in the order you want them to appear in the test. Then select them all and click and drag them into this box.</div>
+<output id="list"></output>
+</div>
+</br>
+Once you have assembled the list of test items above to your satisfaction, click <a href="javascript:downloadFile();">here</a>, to download the concatenated test.</br>
+Ensure the downloaded file is named 'test.js', and move it to Corvus/Test.
+</br></br></br>
+Click <a href='index.html'>here</a> to return to Corax's main page.
+
+<script src="Other files/download.js"></script>
+<script>
+	function showParagraph() {
+		switch (document.getElementById('randomisation').value) {
+			case '1':
+				document.getElementById('sp').style.display = "block";
+				document.getElementById('si').style.display = "none";
+				document.getElementById('in').style.display = "none";
+				break;
+			case '2':
+				document.getElementById('sp').style.display = "none";
+				document.getElementById('si').style.display = "block";
+				document.getElementById('in').style.display = "none";
+				break;
+			case '3':
+				document.getElementById('sp').style.display = "none";
+				document.getElementById('si').style.display = "none";
+				document.getElementById('in').style.display = "block";
+				break;
+			default:
+				console.warn('Unknown randomisation: '+document.getElementById('randomisation').value);
+		}
+		switch (document.getElementById('mouseOver').value) {
+			case '1':
+				document.getElementById('dis').style.display = "block";
+				document.getElementById('ena').style.display = "none";
+				document.getElementById('ess').style.display = "none";
+				break;
+			case '0':
+				document.getElementById('dis').style.display = "none";
+				document.getElementById('ena').style.display = "block";
+				document.getElementById('ess').style.display = "none";
+				break;
+			case '2':
+				document.getElementById('dis').style.display = "none";
+				document.getElementById('ena').style.display = "none";
+				document.getElementById('ess').style.display = "block";
+				break;
+			default:
+				console.warn('Unknown mouseOver: '+document.getElementById('mouseOver').value);
+		}
+	}
+	showParagraph();
+	document.addEventListener('input', function (event) {
+		switch (event.target.id) {
+			case 'randomisation':
+				showParagraph();
+				break;
+			case 'mouseOver':
+				showParagraph();
+				break;
+		}
+	});
+	
+	let test = '';
+
+	// Check for the various File API support.
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+	  // Great success! All the File APIs are supported.
+	} else {
+	  alert('The File APIs are not fully supported in this browser.');
+	}
+
+	function handleFileSelect(evt) {
+		evt.stopPropagation();
+		evt.preventDefault();
+
+		var files = evt.dataTransfer.files; // FileList object.
+		let stringJoinedOutput = '';
+		let counter = 0;
+
+		// files is a FileList of File objects. List some properties.
+		var output = [];
+		for (var i = 0, f; f = files[i]; i++) {
+			output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+				  f.size, ' bytes, last modified: ',
+				  f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+				  '</li>');
+			var reader = new FileReader();
+			reader.onloadend = function(evt) {
+				if (evt.target.readyState == FileReader.DONE) { // DONE == 2
+					let testItemStr = evt.target.result
+					testItemStr = testItemStr.slice(1, evt.target.result.length-1)+',';
+					stringJoinedOutput = stringJoinedOutput+testItemStr;
+					counter ++;
+					if (counter == files.length) {
+						testify (stringJoinedOutput);
+					}
+				}
+			};
+			
+			var blob = f.slice(0, f.size)
+			reader.readAsBinaryString(blob);
+		}
+		document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+	}
+	
+	function handleDragOver(evt) {
+		evt.stopPropagation();
+		evt.preventDefault();
+		evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+	}
+	
+	function testify (string) {
+		finalCommaRemoved = string.slice(0, string.length);
+		test = 'let allPuzzleTypes = ['+finalCommaRemoved+'];';
+		console.log(test);
+	}
+
+	// Setup the dnd listeners.
+	var dropZone = document.getElementById('drop_zone');
+	dropZone.addEventListener('dragover', handleDragOver, false);
+	dropZone.addEventListener('drop', handleFileSelect, false);
+	
+	
+	function downloadFile() {
+		rand = document.getElementById('randomisation').value;
+		allowSkip = document.getElementById('skipy').value;
+		mouseOverFeature = document.getElementById('mouseOver').value;
+		let dataToSubmit = 'let randomisation = '+rand+';\n'+
+							'let allowSkipItem = '+allowSkip+';\n'+
+							'let currentSet = '+mouseOverFeature+';\n'+
+							test;
+		download(dataToSubmit, 'test.js', 'text/plain');
+	}
+</script>
+
+</p>
+</body>
+</html>
