@@ -20,10 +20,10 @@ If it hasn't then with most modern operating systems this can be achieved by ope
 dragging the contents 'Corvus Repository' to your desktop, or another location of your choosing.<br>
 <br>
 <b>How to open and use Corax on a local computer: <br>
-
+Corax can be launched in your default browser by double clicking on 'Corax/index.html'.<br>
 <br>
 How to open and use Corvus on a local computer:</b><br>
-Corvus can be launched in your default browser by double clicking on 'index.html' in the root directory of the app (i.e. in the folder 'Corvus', or 'Corvus-Master').<br>
+Corvus can be launched in your default browser by double clicking on './index.html' in the root directory of the app (i.e. in the folder 'Corvus', or 'Corvus-Master').<br>
 <br>
 <b>The Advanced Corvus User Manual (for programmers):</b><br>
 A brief introduction to modifying Corvus is provided in the same GitHub repository for those who are comfortable reading and editing JavaScript.
