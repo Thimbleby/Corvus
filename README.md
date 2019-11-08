@@ -19,7 +19,7 @@ But some operating systems will do this automatically for you.
 If it hasn't then with most modern operating systems this can be achieved by opening the ZIP, and 
 dragging the contents 'Corvus Repository' to your desktop, or another location of your choosing.<br>
 <br>
-<b>How to open and use Corax on a local computer: </b<br>
+<b>How to open and use Corax on a local computer: </b><br>
 Corax can be launched in your default browser by double clicking on 'Corax/index.html'.<br>
 <br>
 <b>How to open and use Corvus on a local computer:</b><br>
