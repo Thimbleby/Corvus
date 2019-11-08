@@ -1,7 +1,7 @@
 <b>Read Me</b><br>
 Corvus v0.9.0 and Corax v0.1.0<br>
 
-<i>This Read Me file is intended for non-programmers.</i>
+<i>This Read Me file is intended for non-programmers. Programmers looking to edit or contribute to Corvus may be better served by the Advanced Corvus User Manual.</i>
 
 <b>Read Me Contents:</b><br>
 How to download them<br>
