@@ -246,7 +246,7 @@ function skipButton (xloc,yloc) {
 					.append("text")
 					.attr("x", xloc-146/2)
 					.attr("y", yloc+20)
-					.text("Skip this question")
+					.text("Download this test item")
 					.attr("font", "ariel")
 					.attr("font-size", "20px")
 					.attr("fill","blue")

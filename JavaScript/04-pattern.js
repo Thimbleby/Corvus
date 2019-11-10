@@ -25,6 +25,7 @@ function choosePattern() {
 	self.includeAnnuli = true;
 	// pattern type
 	// choses the question from the puzzle array based on the current difficulty (Theta) level
+	console.log(allPuzzleTypes)
 	self.patternType = allPuzzleTypes[linearDifficulty(allPuzzleTypes.length)];
 	if (self.patternType[2] == 2) {
 		self.patDupIcon = Math.floor(Math.random()*2);
@@ -43,7 +44,6 @@ function choosePattern() {
 	// self.parternType[0] defines the size of the matrix. It is a placeholder currently as
 	// matrices other than 3x3 are not fully implemented.
 	// self.patternType[1] defines the graphical elements used; for example spike rings, dice faces, etc...
-	// Currently this is mutually exclusive with multiple annuli NON-URGENT FIX WANTED
 	switch (self.patternType[1][0]) {
 		case 0:
 		case 1:
@@ -55,7 +55,6 @@ function choosePattern() {
 	} 	
 	// Boolean to determine whether the puzzle use graphics with multiple binary elements
 	self.isBinary = false;
-	// What rules are used in the puzzle?
 	// self.patternType[2] contains the list of rules used for a particular puzzle. 
 	for (var t = 0; t < self.patternType[2].length; t++) {
 		if (self.patternType[2][t] > 2 && self.patternType[2][t] < 17)
@@ -1080,7 +1079,7 @@ function choosePattern() {
 	// different from each other
 	// 
 	//
-	// Distractors should be:  ***(not yet implemented/though about sufficiently)***
+	// Distractors should be:  ***(not yet implemented/thought about sufficiently)***
 	// Plausible if possible
 	// Have an appropriate form or structure
 	// Have a controlable Delta
@@ -1496,16 +1495,20 @@ function choosePattern() {
 		}
 		return 0;
 	}
-	function offsetRotation (x,y,n) {
-		if (regPolySides(x,y,n) != 0)
-			return self.rotOffset/(1+n)-1/(regPolySides (x,y,n)*2);
-		else
-			return self.rotOffset/(1+n);
-	}
+	// function offsetRotation (x,y,n) {
+// 		if (regPolySides(x,y,n) != 0)
+// 			return self.rotOffset/(1+n)-1/(regPolySides (x,y,n)*2);
+// 		else
+// 			return self.rotOffset/(1+n);
+// 	}
 	
 	self.usingANYrot = [];
 	for (var z = 0; z < self.noAnnuli; z++) {
-		self.usingANYrot[z] = false;
+		if (self.usingRotation[z] > 0)	{
+			self.usingANYrot[z] = true;
+		} else {
+			self.usingANYrot[z] = false;
+		}
 	}
 	for (var x = 0; x < self.answers.length; x++) {
 		for (var z = 0; z < self.noAnnuli; z++) {

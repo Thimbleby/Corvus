@@ -15,16 +15,16 @@
 	width: 50%;
 }
 
-.answercolumn {
-	float: left;
-	width: 20%;
-}
-
 /* Clear floats after the columns */
 .row:after {
 	content: "";
 	display: table;
 	clear: both;
+}
+
+.titleText {
+    display: inline-block;
+    width: 150px
 }
 </style>
 </head>
@@ -39,13 +39,17 @@
 <body>
 </br>
 </br>Click <a href="javascript:showItem();">here</a> to view the test item!</br>
-Once viewed, click on 'Download this item' to download it. </br>
+Once viewed, click on 'Download this test item' to download it. </br>
 See Corax's user manual for futher instructions once downloaded.</br>
+Once finished viewing and downloading the test item, you can return here using your browser's back button</br>
 </br>
 Click <a href='index.html'>here</a> to return to Corax's main page.</br></br>
 </br>
 <p><font size="+2">Use the menus below to specify the test item you wish to generate, view and download.</font>
-</br><!-- 
+</br>
+You will not be able to view or download any test items while text shows red. </br>
+The red text indicates that something needs to change about that option in order to create a valid test item. </br>
+<!-- 
 
 </br>
 Please note that Corax is not capable of generating the full range of test items Corvus is able to present. </br>
@@ -57,18 +61,21 @@ If you want more control over your test items than Corax can enable, then please
 </br></br>
 <hr>
 <div class = "row">
-	<div class = "column">
+	<div id=graphicOptName class = "column">
 		<font size="+1"><b>Graphic Option:</b></font>
 		<select id='graphicOptions'>
+			<option value=-1>Please select</option>
 			<option value=0>Annulus</option>
 			<option value=1>Dice</option>
 			<option value=2>Petals</option>
 			<option value=3>Spike Rings</option>
+			<option value=6>Box Lines</option>
 		</select>
 	</div>
-	<div class = "column">
+	<div id=logicOptName class = "column">
 		<font size="+1"><b>Logic Option: </b></font>
 		<select id='logicOptions'>
+			<option value=-1>Please select</option>
 			<option value=0>Identity</option>
 			<option value=2>Distribution of 2</option>
 			<option value=1>Distribution of 3</option>
@@ -80,78 +87,172 @@ If you want more control over your test items than Corax can enable, then please
 		</select>
 	</div>
 </div></br>
+<!-- Annuli -->
 <div id = distAnnuliChooser><hr>
-<font size="+1"><b>Number of Annuli: </b></font>
-<select id= 'nAnnuli'>
-	<option value=1>1</option>
-	<option value=2>2</option>
-</select>
-</br></br>
+	<font size="+1"><b>Number of Annuli: </b></font>
+	<select id= 'nAnnuli'>
+		<option value=1>1</option>
+		<option value=2>2</option>
+	</select>
+	</br></br>
 </div>
 <div id = 'distLayout'>
-<hr>
-<font size="+1"><b>Layout: </b></font>
-</br>
-In this section the drop down boxes allow you to select the form of the rule for each attribute. </br>
-Identity means that this attribute's rule is 'all elements are the same'; i.e. it means that there is no rule applied to this attribute.</br>
-If the logic option is not identity, then at least one of these attributes must be assigned a non-identity form.</br>
-</br>
-<div id = 'layout'></div></div>
-<div id = 'distAnswerLayouts'>
-<hr>
-<font size="+1"><b>Answer Layouts: </b></font> </br>
-Number of alternative options: 
-<select id= 'nAnswers'>
-	<option value=3>3</option>
-	<option value=4>4</option>
-	<option value=5>5</option>
-</select>
-</br>
-</br>
-In the drop down boxes below, a value of zero determines that property of that option is identical to the correct answer.</br> 
-At least one property of every option listed here must be non-zero. </br>
-The correct answer will be added to these later (the total number of answers will be the number of alternative answers plus one).</br>
-If this requirement is not satisfied the text will be coloured red, and you will be unable to view and download the item.</br>
-</br>
-A value of 1 or 2 determines that that property is different from the correct answer. </br>
-Properties with the values 1 and 2 will also be different to each other </br>
-</br>
-The order these options are presented in will be shuffled for each participant.
-</br>
-</br>
-<div id = 'Ans1'><b>Alternate Option 1:</b></br></div>
-<div id = 'Ans2'><b>Alternate Option 2:</b></br></div>
-<div id = 'Ans3'><b>Alternate Option 3:</b></br></div>
-<div id = 'Ans4'><b>Alternate Option 4:</b></br></div>
-<div id = 'Ans5'><b>Alternate Option 5:</b></br></div>
-<div id = 'Ans6'><b>Alternate Option 6:</b></br></div>
+	<hr>
+	<font size="+1"><b>Form: </b></font>
+	</br>
+	In this section the drop down boxes allow you to select the form of the rule for each attribute. </br>
+	Identity means that this attribute's rule is 'all elements are the same'; i.e. it means that there is no rule applied to this attribute.</br>
+	If the logic option is not identity, then at least one of these attributes must be assigned a non-identity form.</br>
+	</br>
+	<div id = 'layout'></div>
 </div>
+<div id = 'distAnswerLayouts'>
+	<hr>
+	<font size="+1"><b>Alternate Answer Delta Layouts: </b></font> </br>
+	Number of alternative options: 
+	<select id= 'nAnswers'>
+		<option value=3>3</option>
+		<option value=4>4</option>
+		<option value=5>5</option>
+	</select>
+	</br>
+	</br>
+	In the drop down boxes below, a value of zero determines that property of that option is identical to the correct answer.</br> 
+	At least one property of every option listed here must be non-zero. </br>
+	The correct answer will be added to these later (the total number of answers will be the number of alternative answers plus one).</br>
+	If this requirement is not satisfied the text will be coloured red, and you will be unable to view and download the item.</br>
+	</br>
+	A value of 1 or 2 determines that that property is different from the correct answer. </br>
+	Properties with the values 1 and 2 will also be different to each other </br>
+	</br>
+	The order these options are presented in will be shuffled for each participant.
+	</br>
+	</br>
+	<div id = 'Ans1'><b>Alternate Option 1:</b></br></div>
+	<div id = 'Ans2'><b>Alternate Option 2:</b></br></div>
+	<div id = 'Ans3'><b>Alternate Option 3:</b></br></div>
+	<div id = 'Ans4'><b>Alternate Option 4:</b></br></div>
+	<div id = 'Ans5'><b>Alternate Option 5:</b></br></div>
+</div>
+<!-- Logic Gates -->
 <div id = noEleInCentre>
-<hr>
-<font size="+1"><b>Number of Elements in Centre: </b></font></br></br></div>
-<div id = noLayouts>
-<hr>
-<font size="+1"><b>Number Layout: </b></font></br></br></div>
-<div id = noAnswerLayouts>
-<hr>
-<font size="+1"><b>Number Answer Layouts: </b></font></br></br></div>
+	<hr>
+	<font size="+1"><b>Number of Elements: </b></font>
+	<select id = 'nElements'>
+		<option value = 4>4</option>
+		<option value = 5>5</option>
+		<option value = 6>6</option>
+		<option value = 7>7</option>
+		<option value = 8>8</option>
+		<option value = 9>9</option>
+	</select></br></br>
+</div>
 
+<div id = noLayoutsLG>
+	<hr>
+	<font size="+1"><b>Form: </b></font></br>
+	These four elements form the top-left four elements of the matrix.</br>
+	All four possible combinations of the zero and one must be represented at least once in the rows and columns formed by these four elements.</br>
+	The possible combinations are&nbsp (0, 0),&nbsp&nbsp(0, 1),&nbsp&nbsp(1, 0),&nbsp and&nbsp (1, 1).</br></br>
+	<div class = 'row'>
+		<div id = arrayChooserNLLGTL class=column>
+			<span id = nLGFormTL><span class = 'titleText'>Top left element: </span></span>
+		</div>
+		<div id = arrayChooserNLLGTC class=column>
+			<span id = nLGFormTC><span class = 'titleText'>Top centre element: </span></span>
+		</div>
+	</div>
+	<div class = 'row'>
+		<div id = arrayChooserNLLGCL class=column>
+			<span id = nLGFormCL><span class = 'titleText'>Centre left element: </span></span>
+		</div>
+		<div id = arrayChooserNLLGCC class=column>
+			<span id = nLGFormCC><span class = 'titleText'>Centre element: </span></span>
+		</div>
+	</div></br>
+</div>
+
+<div id = noAnswerLayoutsLG>
+	<hr>
+	<font size="+1"><b>Alternate Answer Delta Layouts: </b></font> <br>
+	Number of alternative options:
+	<select id= 'nAnswersLG'>
+		<option value=3>3</option>
+		<option value=4>4</option>
+		<option value=5>5</option>
+	</select>
+	</br></br>
+	The alternate answers must be different to each other, and each cannot be all zeros.
+	</br>
+	</br>
+	<div id = 'LGOpt1'><span class = 'titleText'><b>Alternate Option 1:</b></span></div>
+	<div id = 'LGOpt2'><span class = 'titleText'><b>Alternate Option 2:</b></span></div>
+	<div id = 'LGOpt3'><span class = 'titleText'><b>Alternate Option 3:</b></span></div>
+	<div id = 'LGOpt4'><span class = 'titleText'><b>Alternate Option 4:</b></span></div>
+	<div id = 'LGOpt5'><span class = 'titleText'><b>Alternate Option 5:</b></span></div>
+</div>
+
+<!-- Addition -->
+<div id = noLayoutsAdd>
+	<hr>
+	<font size="+1"><b>Form: </b></font></br>
+	These four elements form the top-left four elements of the matrix.</br>
+	The sum of each row and column (of these four elements) must not exceed or fall below a magnitude of 9.</br>
+	Similarly the sum of all four elements must also not exceed or fall below a magnitude of 9.</br></br>
+	<div class = 'row'>
+		<div id = arrayChooserNLAddTL class=column>
+			<span id = nAddFormTL><span class = 'titleText'>Top left element: </span></span>
+		</div>
+		<div id = arrayChooserNLAddTC class=column>
+			<span id = nAddFormTC><span class = 'titleText'>Top centre element: </span></span>
+		</div>
+	</div>
+	<div class = 'row'>
+		<div id = arrayChooserNLAddCL class=column>
+			<span id = nAddFormCL><span class = 'titleText'>Centre left element: </span></span>
+		</div>
+		<div id = arrayChooserNLAddCC class=column>
+			<span id = nAddFormCC><span class = 'titleText'>Centre element: </span></span>
+		</div>
+	</div></br>
+</div>
+<div id = noAnswerLayoutsAdd>
+	<hr>
+	<font size="+1"><b>Alternate Answer Delta Layouts: </b></font></br>
+	Number of alternative options: 
+	<select id= 'nAnswersAdd'>
+		<option value=3>3</option>
+		<option value=4>4</option>
+		<option value=5>5</option>
+	</select>
+	</br></br>
+	The alternate answers must be different to each other, and must not be equal the sum of the Form elements.
+	</br>
+	</br>
+	<div id = 'AddOpt1'><span class = 'titleText'><b>Alternate Option 1:</b></div>
+	<div id = 'AddOpt2'><span class = 'titleText'><b>Alternate Option 2:</b></div>
+	<div id = 'AddOpt3'><span class = 'titleText'><b>Alternate Option 3:</b></div>
+	<div id = 'AddOpt4'><span class = 'titleText'><b>Alternate Option 4:</b></div>
+	<div id = 'AddOpt5'><span class = 'titleText'><b>Alternate Option 5:</b></div>
+</div>
+<!-- Annuli -->
 <div id = concealedDiv>
-<hr>
-<font size="+1"><b>Concealed: </b></font>
-<select id ='concealed'>
-	<option value=0>0</option>
-	<option value=0>1</option>
-	<option value=0>2</option>
-	<option value=0>3</option>
-</select></br>
-The concealed property will attempt to conceal the specified number of elements, while ensuring that the test item is solvable.
-It will prioritise solvability over concealing the correct number of elements.</br></br>
+	<hr>
+	<font size="+1"><b>Concealed: </b></font>
+	<select id ='concealed'>
+		<option value=0>0</option>
+		<option value=1>1</option>
+		<option value=2>2</option>
+		<option value=3>3</option>
+	</select></br>
+	The concealed property will attempt to conceal the specified number of elements, while ensuring that the test item is solvable.
+	It will prioritise solvability over concealing the correct number of elements.</br></br>
 </div>
 <hr>
 </br>Click <a href="javascript:showItem();">here</a> to view the test item!</br>
-Once viewed, click on 'Download this item' to download it. </br>
+Once viewed, click on 'Download this test item' to download it. </br>
 See Corax's user manual for further instructions once downloaded.</br>
+Once finished viewing and downloading the test item, you can return here using your browser's back button</br>
 </br>
 </br>Click <a href='index.html'>here</a> to return to Corax's main page.
 

@@ -29,6 +29,11 @@
 	padding-left:2em;
 }
 
+.questionPart {
+    display: inline-block;
+/*     width: 200px */
+}
+
 </style>
 </head>
 <body>
@@ -41,13 +46,21 @@
 <html>
 <body>
 
-Participants ...
+<span class = questionPart>Participants ...</span>
 <select id = 'skipy'>
 	<option value = true>can</option>
 	<option value = false>cannot</option>
 </select> ... skip test items.
 </br>
-The mouse over feature is ...
+<!-- 
+<span class = questionPart>The missing element ...</span>
+<select id = 'missingEle'>
+	<option value = 0>is always the bottom right element</option>
+	<option value = 1>can be any element</option>
+</select> ... within the matrix.
+</br>
+ -->
+<span class = questionPart>The mouse over feature is ...</span>
 <select id = 'mouseOver'>
 	<option value = 1>disabled</option>
 	<option value = 0>enabled</option>
@@ -60,7 +73,7 @@ The mouse over feature is ...
 </font></br></div>
 <div id = 'ess' class = 'explanation'><font size="-1">Selecting 'essential' means that participants cannot see the details of the options available to them unless their mouse is positioned over that option.
 </font></br></div>
-These test items will be ...
+<span class = questionPart>These test items will be ...</span>
 <select id = 'randomisation'>
 	<option value=1>specified by</option>
 	<!-- <option value=2>very similar to</option> -->
@@ -203,9 +216,11 @@ Click <a href='index.html'>here</a> to return to Corax's main page.
 	
 	function downloadFile() {
 		rand = document.getElementById('randomisation').value;
+// 		missing = document.getElemebtById('missingEle').value;
 		allowSkip = document.getElementById('skipy').value;
 		mouseOverFeature = document.getElementById('mouseOver').value;
-		let dataToSubmit = 'let randomisation = '+rand+';\n'+
+		let dataToSubmit =  'let randomisation = '+rand+';\n'+
+							// 'let missingEle = '+missing+';\n'+
 							'let allowSkipItem = '+allowSkip+';\n'+
 							'let currentSet = '+mouseOverFeature+';\n'+
 							test;

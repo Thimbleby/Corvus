@@ -145,7 +145,7 @@ var iconProperties = [];
 // Maximum number of interlocking shapes (this should probably really be called maxAnulli)
 var maxShapes = 2; //3;
 // difficulty category at which a rotation offset is used;
-var rotationOffset = 0.6;
+var rotationOffset =  100; //0.6;
 // difficulty category at which clear wrong answers are not presented (e.g. wrong annuli or shade)
 var noClearlyWrong = 0.7;
 var clearlyWrong = 0.2;
