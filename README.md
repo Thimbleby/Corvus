@@ -11,8 +11,16 @@ The Advanced Corvus User Manual (for programmers) <br>
 Final Words<br>
 <br>
 <br>
-<b>How to download them:</b><br>
-Click on the green 'Clone or Download' button, and select 'Download as ZIP'. <br>
+<b>How to download Corvus and Corvax:</b><br>
+<font style.size = '+2'>Navigate to https://github.com/Thimbleby/Corvus, where you should see a web page like the following:</font>
+
+![Page 1.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%201.PNG?raw=true)
+
+Click on the green 'Clone or Download' button on the right, and select 'Download as ZIP'. <br>
+
+![Page 2.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%202.PNG?raw=true)
+
+
 For most operating systems you may then need to extract the file from the ZIP. 
 But some operating systems will do this automatically for you. 
 
