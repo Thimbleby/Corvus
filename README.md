@@ -32,7 +32,6 @@ Extracting everything from the zip file using your normal means of doing so - ex
 You have now successfully downloaded this app.<br>
 
 ---
-<br>
 ## How to open and use Corvus on a local computer: <br>
 Opening the folder 'Corvus-Master' should present you with contents like in this image:<br>
 
@@ -53,17 +52,16 @@ Once the test is complete, Corvus will download the participant's results to the
 The results downloaded will include the participant's choices for each test item, if their answer was correct, how long they took, and how and when they moved their mouse over the options available.<br>
 
 ---
-<br>
 ## How to open and use Corax on a local computer: <br>
 Corax can be launched in your default browser by double clicking on 'Corax/index.html'.<br>
 
-<br>
 ---
-## The Advanced Corvus User Manual (for programmers):<br>
-A brief introduction to modifying Corvus is provided in the same GitHub repository for those who are comfortable reading and editing JavaScript.
-It may also be of use if you wish to host Corvus on your own secure server, as minor modifications to Corvus will be necessary.
-<br>
-<br>
+## The Advanced Corvus User Manual (for programmers): <br>
+
+A brief introduction to modifying Corvus is provided in the same GitHub repository for those who are comfortable reading and editing JavaScript. <br>
+
+It may also be of use if you wish to host Corvus on your own secure server, as minor modifications to Corvus will be necessary. <br>
+
 ---
 ## Final Words <br>
 If you have any questions, please feel free to contact the author by opening an issue on the GitHub repository for Corvus https://github.com/Thimbleby/Corvus.
