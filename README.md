@@ -1,4 +1,4 @@
-<b>Read Me</b><br>
+# Read Me <br>
 Corvus v0.9.0 and Corax v0.1.0<br>
 
 <i>This Read Me file is intended for non-programmers. Programmers looking to edit or contribute to Corvus may be better served by the Advanced Corvus User Manual.</i>
@@ -12,8 +12,9 @@ The Advanced Corvus User Manual (for programmers) <br>
 Final Words<br></p>
 <hr>
 <br>
-<b>How to download Corvus and Corvax:</b><br>
-<font style.size = '+2'>Navigate to https://github.com/Thimbleby/Corvus, where you should see a web page like the following:</font>
+## How to download Corvus and Corvax:
+
+Navigate to https://github.com/Thimbleby/Corvus, where you should see a web page like the following:
 
 ![Page 01.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2001.PNG?raw=true)
 
