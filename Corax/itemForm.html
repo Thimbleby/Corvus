@@ -104,6 +104,9 @@ If you want more control over your test items than Corax can enable, then please
 	Identity means that this attribute's rule is 'all elements are the same'; i.e. it means that there is no rule applied to this attribute.</br>
 	If the logic option is not identity, then at least one of these attributes must be assigned a non-identity form.</br>
 	</br>
+	The item must also have no lines of symmetry running through the missing element. </br>
+	This includes diagonal lines, as well as horizontal and vertical lines.</br>
+	</br>
 	<div id = 'layout'></div>
 </div>
 <div id = 'distAnswerLayouts'>
@@ -151,9 +154,17 @@ If you want more control over your test items than Corax can enable, then please
 <div id = noLayoutsLG>
 	<hr>
 	<font size="+1"><b>Form: </b></font></br>
-	These four elements form the top-left four elements of the matrix.</br>
+	These four drop-down menus form the top-left four elements of the matrix.</br>
+	These four elements are then used to construct the remainder of the matrix using the logic gate selected above.</br>
 	All four possible combinations of the zero and one must be represented at least once in the rows and columns formed by these four elements.</br>
-	The possible combinations are&nbsp (0, 0),&nbsp&nbsp(0, 1),&nbsp&nbsp(1, 0),&nbsp and&nbsp (1, 1).</br></br>
+	The possible combinations are&nbsp (0, 0),&nbsp&nbsp(0, 1),&nbsp&nbsp(1, 0),&nbsp and&nbsp (1, 1).</br>
+	</br>
+	Within the matrix, each 1 indicates the presence of the corresponding line in the test item.</br>
+	While each 0 indicates the absence of that line in the test item.</br>
+	</br>
+	The item must also have no lines of symmetry running through the missing element. </br>
+	This includes diagonal lines, as well as horizontal and vertical lines.</br>
+	</br>
 	<div class = 'row'>
 		<div id = arrayChooserNLLGTL class=column>
 			<span id = nLGFormTL><span class = 'titleText'>Top left element: </span></span>
@@ -174,15 +185,22 @@ If you want more control over your test items than Corax can enable, then please
 
 <div id = noAnswerLayoutsLG>
 	<hr>
-	<font size="+1"><b>Alternate Answer Delta Layouts: </b></font> <br>
+	<font size="+1"><b>Alternate Answer Delta Layouts: </b></font> 
 	Number of alternative options:
 	<select id= 'nAnswersLG'>
 		<option value=3>3</option>
 		<option value=4>4</option>
 		<option value=5>5</option>
 	</select>
-	</br></br>
-	The alternate answers must be different to each other, and each cannot be all zeros.
+	</br><br>
+	In the drop down boxes below, a value of zero determines that property of that option is identical to the correct answer.</br> 
+	The correct answer will be added to these later (the total number of answers will be the number of alternative answers plus one).</br>
+	A value of 1 determines that that property of that element is different from the correct answer. </br>
+	</br>
+	The alternate answers must be different to each other, and each cannot be all zeros.</br>
+	If this requirement is not satisfied the text will be coloured red, and you will be unable to view and download the item.</br>
+	</br>
+	The order these options are presented in will be shuffled for each participant.</br>
 	</br>
 	</br>
 	<div id = 'LGOpt1'><span class = 'titleText'><b>Alternate Option 1:</b></span></div>
@@ -196,9 +214,15 @@ If you want more control over your test items than Corax can enable, then please
 <div id = noLayoutsAdd>
 	<hr>
 	<font size="+1"><b>Form: </b></font></br>
-	These four elements form the top-left four elements of the matrix.</br>
+	These four drop-down menus form the top-left four elements of the matrix.</br>
+	Each digit in these drop-down menus represents a number that will be encoded into the matrix. </br>
+	The first two elements in any row or column are added together to form the third.</br>
+	</br>
 	The sum of each row and column (of these four elements) must not exceed or fall below a magnitude of 9.</br>
-	Similarly the sum of all four elements must also not exceed or fall below a magnitude of 9.</br></br>
+	Similarly the sum of all four elements must also not exceed or fall below a magnitude of 9.</br>
+	</br>
+	The item must also have no lines of symmetry running through the missing element. </br>
+	This includes diagonal lines, as well as horizontal and vertical lines.</br></br>
 	<div class = 'row'>
 		<div id = arrayChooserNLAddTL class=column>
 			<span id = nAddFormTL><span class = 'titleText'>Top left element: </span></span>
