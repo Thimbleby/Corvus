@@ -31,7 +31,7 @@ Click on the green 'Clone or Download' button on the right. The button is circle
 
 ![Page 02.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2002.PNG?raw=true)
 
-A small box should pop open below your mouse. From this box select "Download as ZIP" (Circld red).<br>
+A small box should pop open below your mouse. From this box select "Download ZIP" (Circld red).<br>
 
 ![Page 03.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2003.PNG?raw=true)
 
@@ -45,7 +45,7 @@ Opening the folder "Corvus-Master" should present you with contents like in this
 
 ![Page 04.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2004.PNG?raw=true)
 
-Corvus can be launched in your default browser by double clicking on the file "index.html". However there are some reports that it may not work with Microsoft Edge. Chrome, Firefox and Safari have all been tested and should work. <br>
+Corvus can be launched in your default browser by double clicking on the file "index.html". However Corvus will not work with certain browsers such as Microsoft Edge. Chrome, Firefox and Safari have all been tested and should work. <br>
 You will be presented with a page much like the following image:<br>
 
 ![Page 14.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2014.PNG?raw=true)
@@ -55,7 +55,7 @@ The following image is an example test item: <br>
 
 ![Page 15.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2015.PNG?raw=true)
 
-Once the test is complete, Corvus will download the participant's results to the local machine. Depending on your default browser and opperating system, this may download automatically, or require authorisation by the user. By default your browser should place the file in your downloads folder. If you want it to download without prompts, you may need to open it in a different browser, or by changing your system settings - exactly how this can be done will depend on your system.<br>
+Once the test is complete, Corvus will download the participant's results to the local machine. Depending on your default browser and operating system, this may download automatically, or require authorisation by the user. By default your browser should place the file in your downloads folder. If you want it to download without prompts, you may need to open it in a different browser, or by changing your system settings - exactly how this can be done will depend on your system.<br>
 
 The results downloaded will include the participant's choices for each test item, if their answer was correct, how long they took, and how and when they moved their mouse over the options available.<br>
 
@@ -107,7 +107,7 @@ The following image is the test item as specified in the previous image:<br>
 
 If, on viewing it, you want to alter your test item, you can return to the test item design page by clicking the back arrow in your browser.<br>
 If instead you are happy, and want to downlaod it, click on any of the options, or on the blue text "Download this test item" as seen in the top right of the image above.<br><br>
-Depending on your default browser and opperating system, this may download automatically, or require authorisation by the user. <br>
+Depending on your default browser and operating system, this may download automatically, or require authorisation by the user. <br>
 Once you have designed, viewed and downloaded all of the test items you want to include in your test, find them on your system (by default browsers should download files to your downloads folder, but feel free to move them from there), and arrange them in the order you want them to appear in your test. This may involve you naming them according to their numerical order - if you choose to arrange them by doing so, remember to always use the same number of digits, as otherwise the order can be messed up by larger numbers that start with a small number (i.e. alphabetically 'item100' comes before 'item56', but after 'item056').<br><br>
 
 Once ready, from Corax's main menu (see above - you can get there by clicking "here" in the text "Click here to return to Corax's main page."), choose the second option in order to construct the test from your test items.<br><br>
