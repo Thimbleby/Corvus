@@ -4,17 +4,17 @@ Corvus v0.9.0 and Corax v0.1.0<br><br>
 Corvus is an automatic Raven's-like test generator, written in JavaScript.<br>
 It is called Corvus, because that is the genus Ravens belong to.<br><br>
 
-In this case 'Raven' refers to Raven's Progressive Matricies, which are the most popular and most studied tests of fluid intelligence.<br><br>
+In this case 'Raven' refers to Raven's Progressive Matrices, which are the most popular and most studied tests of fluid intelligence.<br><br>
 
 Corax is a tool that allows users to design and create their own tests for use with Corvus without programming.<br>
-It is called Corax, because Corvus Corax is the Common Raven's full latin name.<br><br>
+It is called Corax, because Corvus Corax is the Common Raven's full Latin name.<br><br>
 
 <i>This Read Me file is intended for non-programmers. Programmers looking to edit or contribute to Corvus may be better served by the Advanced Corvus User Manual.</i>
 <br>
 
 ---
 ## Read Me Contents: <br>
-<p>How to download them<br>
+<p>How to download Corvus and Corax<br>
 How to open and use Corax on a local computer<br>
 How to open and use Corvus on a local computer<br>
 The Advanced Corvus User Manual (for programmers) <br>
@@ -27,15 +27,15 @@ Navigate to https://github.com/Thimbleby/Corvus, where you should see a web page
 
 ![Page 01.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2001.PNG?raw=true)
 
-Click on the green 'Clone or Download' button on the right. <br>
+Click on the green 'Clone or Download' button on the right. The button is circled in red in the image below. <br>
 
 ![Page 02.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2002.PNG?raw=true)
 
-A small box should pop open below your mouse. From this box select "Download as ZIP".<br>
+A small box should pop open below your mouse. From this box select "Download as ZIP" (Circld red).<br>
 
 ![Page 03.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2003.PNG?raw=true)
 
-Extracting everything from the zip file using your normal means of doing so - exactly how to do this will vary system to system. Once done, you should be left with a folder titled "Corvus-master".<br>
+Extract everything from the zip file using your normal means of doing so - exactly how to do this will vary system to system. Once done, you should be left with a folder titled "Corvus-master".<br>
 
 You have now successfully downloaded this app.<br>
 
@@ -45,7 +45,7 @@ Opening the folder "Corvus-Master" should present you with contents like in this
 
 ![Page 04.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2004.PNG?raw=true)
 
-Corvus can be launched in your default browser by double clicking on the file "index.html".<br>
+Corvus can be launched in your default browser by double clicking on the file "index.html". However there are some reports that it may not work with Microsoft Edge. Chrome, Firefox and Safari have all been tested and should work. <br>
 You will be presented with a page much like the following image:<br>
 
 ![Page 14.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2014.PNG?raw=true)
@@ -55,7 +55,7 @@ The following image is an example test item: <br>
 
 ![Page 15.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2015.PNG?raw=true)
 
-Once the test is complete, Corvus will download the participant's results to the local machine. Depending on your default browser and opperating system, this may download automatically, or require authorisation by the user. If you want it to download without prompts, you may need to open it in a different browser, or by changing your system settings - exactly how this can be done will depend on your system.<br>
+Once the test is complete, Corvus will download the participant's results to the local machine. Depending on your default browser and opperating system, this may download automatically, or require authorisation by the user. By default your browser should place the file in your downloads folder. If you want it to download without prompts, you may need to open it in a different browser, or by changing your system settings - exactly how this can be done will depend on your system.<br>
 
 The results downloaded will include the participant's choices for each test item, if their answer was correct, how long they took, and how and when they moved their mouse over the options available.<br>
 
@@ -80,12 +80,13 @@ On chosing the first option from the previous page, you will be presented with t
 ![Page 07.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2007.PNG?raw=true)
 
 From here you can construct your own test item!<br><br>
+
 Start by selecting a Graphic Option, and a Logic Option. <br>
 Note however that only certain combinations of Graphic Options and Logic Options are possible, but Corax will only allow you to make choices from these menus that work together. <br>
 <br>
-If after making a choice in both menus, you decide that you would rather make a test item with an option that is greyed out, you can reset both menus by choosing "Please Select" from either of Graphic Options or Logic Options. <br>
+If after selecting an option in both menus, you decide that you would rather make a test item with an option that is greyed out, you can reset both menus by choosing "Please Select" from either of Graphic Options or Logic Options. <br>
 <br>
-Once you have made some choices, you will be presented with more choices. Follow the instructions provided, ensuring that there is no warning red text -- which, if present, indicates that there is something wrong with that aspect of your test item. The following image is an example of that red text in action: <br>
+You will then be presented with additional options. Follow the instructions provided, ensuring that there is no warning red text -- which, if present, indicates that there is something wrong with that aspect of your test item. The following image is an example of that red text in action: <br>
 
 ![Page 10.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2010.PNG?raw=true)
 
@@ -96,20 +97,20 @@ Your final item might look something like this:<br>
 
 ![Page 08.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2008.PNG?raw=true)
 
-When you are happy with your test item, you can click the word "here" in the text "Click <u>here</u> to view the test item!"< br>
+When you are happy with your test item, you can click the word "_here_" in the text "Click _here_ to view the test item!"<br><br>
 
-Corax will then show you what your test item might look like in Corvus. Although note that some features of test items are always randomised, even on the least flexible settings, such as the order of the options presented.<br>
+Corax will then show you what your test item might look like in Corvus. Although, note that some aspects are random, such as the order the options are presented in.<br><br>
 
 The following image is the test item as specified in the previous image:<br>
 
 ![Page 09.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2009.PNG?raw=true)
 
-If, on viewing it, you want to alter your test item, you can get back to the test item design page by clicking back in your browser.<br>
+If, on viewing it, you want to alter your test item, you can return to the test item design page by clicking the back arrow in your browser.<br>
 If instead you are happy, and want to downlaod it, click on any of the options, or on the blue text "Download this test item" as seen in the top right of the image above.<br><br>
 Depending on your default browser and opperating system, this may download automatically, or require authorisation by the user. <br>
 Once you have designed, viewed and downloaded all of the test items you want to include in your test, find them on your system (by default browsers should download files to your downloads folder, but feel free to move them from there), and arrange them in the order you want them to appear in your test. This may involve you naming them according to their numerical order - if you choose to arrange them by doing so, remember to always use the same number of digits, as otherwise the order can be messed up by larger numbers that start with a small number (i.e. alphabetically 'item100' comes before 'item56', but after 'item056').<br><br>
 
-Once ready, from Corax's main menu (see above - you can get there by clicking "here" in the text "Click <u>here</u> to return to Corax's main page."), choose the second option in order to construct the test from your test items.<br><br>
+Once ready, from Corax's main menu (see above - you can get there by clicking "_here_" in the text "Click _here_ to return to Corax's main page."), choose the second option in order to construct the test from your test items.<br><br>
 
 ![Page 11.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2011.PNG?raw=true)
 
@@ -120,7 +121,7 @@ Once done, you should see something like this:<br>
 
 ![Page 12.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2012.PNG?raw=true)
 
-When ready, click "here" in the line of text that ends "..., click <u>here</u>, to download the concatinated test."<br>
+When ready, click "_here_" in the line of text that ends "..., click _here_, to download your test."<br>
 
 Again, your system may require you to authorise the download.<br>
 Once done, place the downloaded file in the folder "Test", which can be found in the folder "Corax-Master". You may need to rename, delete or overwrite the previous file; either way, the new file needs to be called "test.js", and be in the "Test" folder, as shown below: <br>
