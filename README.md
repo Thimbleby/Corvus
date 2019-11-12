@@ -97,7 +97,7 @@ Your final item might look something like this:<br>
 
 ![Page 08.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2008.PNG?raw=true)
 
-When you are happy with your test item, you can click the word "_here_" in the text "Click _here_ to view the test item!"<br><br>
+When you are happy with your test item, you can click the word "here" in the text "Click here to view the test item!"<br><br>
 
 Corax will then show you what your test item might look like in Corvus. Although, note that some aspects are random, such as the order the options are presented in.<br><br>
 
@@ -110,7 +110,7 @@ If instead you are happy, and want to downlaod it, click on any of the options, 
 Depending on your default browser and opperating system, this may download automatically, or require authorisation by the user. <br>
 Once you have designed, viewed and downloaded all of the test items you want to include in your test, find them on your system (by default browsers should download files to your downloads folder, but feel free to move them from there), and arrange them in the order you want them to appear in your test. This may involve you naming them according to their numerical order - if you choose to arrange them by doing so, remember to always use the same number of digits, as otherwise the order can be messed up by larger numbers that start with a small number (i.e. alphabetically 'item100' comes before 'item56', but after 'item056').<br><br>
 
-Once ready, from Corax's main menu (see above - you can get there by clicking "_here_" in the text "Click _here_ to return to Corax's main page."), choose the second option in order to construct the test from your test items.<br><br>
+Once ready, from Corax's main menu (see above - you can get there by clicking "here" in the text "Click here to return to Corax's main page."), choose the second option in order to construct the test from your test items.<br><br>
 
 ![Page 11.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2011.PNG?raw=true)
 
@@ -121,7 +121,7 @@ Once done, you should see something like this:<br>
 
 ![Page 12.PNG](https://github.com/Thimbleby/Corvus/blob/master/ReadMe%20Images/Page%2012.PNG?raw=true)
 
-When ready, click "_here_" in the line of text that ends "..., click _here_, to download your test."<br>
+When ready, click "here" in the line of text that ends "..., click here, to download your test."<br>
 
 Again, your system may require you to authorise the download.<br>
 Once done, place the downloaded file in the folder "Test", which can be found in the folder "Corax-Master". You may need to rename, delete or overwrite the previous file; either way, the new file needs to be called "test.js", and be in the "Test" folder, as shown below: <br>
