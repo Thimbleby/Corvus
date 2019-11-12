@@ -132,7 +132,7 @@ To try the test, launch Corvus as described in the previous section.
 
 
 ---
-## The Advanced Corvus User Manual (for programmers): <br>
+## Advanced User Manual (for programmers): <br>
 
 A brief introduction to modifying Corvus is provided in the same GitHub repository for those who are comfortable reading and editing JavaScript. <br>
 
